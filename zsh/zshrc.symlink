@@ -5,8 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-
+ZSH_THEME=""
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -38,10 +37,31 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/opt/local/bin:/opt/local/sbin:/Users/xep/.rvm/gems/ruby-1.9.3-p362/bin:/Users/xep/.rvm/gems/ruby-1.9.3-p362@global/bin:/Users/xep/.rvm/rubies/ruby-1.9.3-p362/bin:/Users/xep/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/usr/lib/php/pear
+export PATH=/opt/local/bin:/opt/local/sbin:/Users/xep/.rvm/gems/ruby-1.9.3-p362/bin:/Users/xep/.rvm/gems/ruby-1.9.3-p362@global/bin:/Users/xep/.rvm/rubies/ruby-1.9.3-p362/bin:/Users/xep/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/usr/lib/php/pear
+export PATH="/usr/local/bin:$PATH"
+
 ### RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 PATH=$PATH::$HOME/bin:$HOME/.rvm/bin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export EDITOR='vim -f'
+
+alias ls='ls -G'
+
+#Stuff for git
+parse_git_branch () {
+  git branch 2> /dev/null | grep "*" | sed -e 's/* \(.*\)/ (\1)/g'
+}
+
+# sunburst.vim like colors for prompt
+BLACK=$'\033[0m'
+RED=$'\033[38;5;167m'
+GREEN=$'\033[38;5;71m'
+BLUE=$'\033[38;5;111m'
+YELLOW=$'\033[38;5;228m'
+ORANGE=$'\033[38;5;173m'
+
+function precmd() {
+export PROMPT="%{$BLACK%}:%{$GREEN%}%~%{$RED%}$(parse_git_branch)%{$BLACK%}%# "
+}

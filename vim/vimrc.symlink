@@ -37,11 +37,14 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+#no highlight on search
+set nohlsearch
+
 "Startup
 let g:neocomplcache_enable_at_startup = 1
 
 "Theme
-color wombat
+color default
 set colorcolumn=80               "Color column 80
 
 """""""""""""""""""""""""""TABULARIZE"""""""""""""""""""""""""""""""""""""""""
