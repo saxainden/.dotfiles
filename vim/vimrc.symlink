@@ -37,14 +37,23 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+
 "no highlight on search
 set nohlsearch
 
 "Startup
 let g:neocomplcache_enable_at_startup = 1
+let g:ctrlp_show_hidden = 1
+" Remap open file in new tab keys
+let g:ctrlp_prompt_mappings = {
+  \ 'AccepSelection("e")': ['<cr>'],
+  \ 'AccepSelection("h")': ['<c-x>'],
+  \ 'AccepSelection("v")': ['<c-v>'],
+  \ 'AccepSelection("t")': ['<c-t>'],
+  \}
 
 "Theme"
-color default
+color jellybeans
 
 """""""""""""""""""""""""""TABULARIZE"""""""""""""""""""""""""""""""""""""""""
 nmap <Leader>a= :Tabularize /=<CR>

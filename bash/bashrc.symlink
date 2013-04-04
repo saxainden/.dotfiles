@@ -1,0 +1,22 @@
+export PATH=/opt/local/bin:/opt/local/sbin:/Users/xep/.rvm/gems/ruby-1.9.3-p362/bin:/Users/xep/.rvm/gems/ruby-1.9.3-p362@global/bin:/Users/xep/.rvm/rubies/ruby-1.9.3-p362/bin:/Users/xep/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/usr/lib/php/pear
+export PATH="/usr/local/bin:$PATH"
+
+### RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+PATH=$PATH::$HOME/bin:$HOME/.rvm/bin
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export EDITOR='vim -f'
+ 
+GIT_PS1_SHOWDIRTYSTATE=1
+
+source ~/.git-prompt.sh
+RED='\e[0;91m'         # Red
+GREEN='\e[0;92m'       # Green
+YELLOW='\e[0;93m'      # Yellow
+BLUE='\e[0;94m'        # Blue
+PURPLE='\e[0;95m'      # Purple
+CYAN='\e[0;96m'        # Cyan
+WHITE='\e[0;97m'       # White
+
+PS1="\[$GREEN\]\w\[\033[m\]\[$CYAN\]\$(__git_ps1)\[$WHITE\]: "
