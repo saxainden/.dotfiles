@@ -53,7 +53,7 @@ let g:ctrlp_prompt_mappings = {
   \}
 
 "Theme"
-color ir_black
+color bclear
 
 """""""""""""""""""""""""""TABULARIZE"""""""""""""""""""""""""""""""""""""""""
 nmap <Leader>a= :Tabularize /=<CR>
