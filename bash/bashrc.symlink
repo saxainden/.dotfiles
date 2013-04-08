@@ -2,6 +2,7 @@
 GIT_PS1_SHOWDIRTYSTATE=1
 
 source ~/.git-prompt.sh
+BLACK='\e[0;30m'       # Black
 RED='\e[0;91m'         # Red
 GREEN='\e[0;92m'       # Green
 YELLOW='\e[0;93m'      # Yellow
@@ -10,4 +11,4 @@ PURPLE='\e[0;95m'      # Purple
 CYAN='\e[0;96m'        # Cyan
 WHITE='\e[0;97m'       # White
 
-PS1="\[$GREEN\]\w\[\033[m\]\[$CYAN\]\$(__git_ps1)\[$WHITE\]: "
+PS1="\[$GREEN\]\w\[\033[m\]\[$CYAN\]\$(__git_ps1)\[$BLACK\]: "
