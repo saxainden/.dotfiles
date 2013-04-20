@@ -1,8 +1,29 @@
-execute pathogen#infect()
 set nocompatible                " choose no compatibility with legacy vi
-syntax enable
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+ " let Vundle manage Vundle
+ "  " required! 
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-commentary.git'
+Bundle 'tpope/vim-repeat.git'
+Bundle 'tpope/vim-surround.git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Shougo/neocomplcache'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'godlygeek/tabular'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'flazz/vim-colorschemes'
+
 set encoding=utf-8
 set showcmd                     " display incomplete commands
+syntax enable
 filetype plugin indent on       " load file type plugins + indentation
 set number                      " show line numbers
 set guifont=Inconsolata:h16
@@ -20,27 +41,6 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-"Key Bindings
-" use comma as <Leader> key instead of backslash
-let mapleader=","
-
-nnoremap <leader><leader> <c-^>
-:imap jj <Esc>
-
-" double percentage sign in command mode is expanded
-" to directory of current file - http://vimcasts.org/e/14
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-
-" easier navigation between split windows
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-
-
-"no highlight on search
-set nohlsearch
-
 "Startup
 let g:neocomplcache_enable_at_startup = 1
 let g:ctrlp_show_hidden = 1
@@ -52,29 +52,10 @@ let g:ctrlp_prompt_mappings = {
   \ 'AccepSelection("t")': ['<c-t>'],
   \}
 
-"Theme"
-color bclear
+"Theme
+set t_Co=256
+color jellybeans
 
-"""""""""""""""""""""""""""TABULARIZE"""""""""""""""""""""""""""""""""""""""""
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-nmap <leader>a> :Tabularize /=><cr>
-
-""""""""""""""""""""""""NEOSNIPPET"""""""""""""""""""""""""""""""""""""""""
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
 """"""""""""""""""""""""NEOCOMPLCACHE"""""""""""""""""""""""""""""""""""""""""
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 " let g:acp_enableAtStartup = 0
@@ -104,26 +85,6 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
 " AutoComplPop like behavior.
 "let g:neocomplcache_enable_auto_select = 1
 
@@ -150,3 +111,49 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+" MAPPINGS
+" use comma as <Leader> key instead of backslash
+let mapleader=","
+" go to last file
+nnoremap <leader><leader> <c-^>
+" exit insert mode
+imap jj <Esc>
+
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" " Rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+
+"""""""""""""""""""""""""""TABULARIZE"""""""""""""""""""""""""""""""""""""""""
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <leader>a> :Tabularize /=><cr>
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+" SuperTab like snippets behavior.
+"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
