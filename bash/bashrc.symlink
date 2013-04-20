@@ -11,4 +11,4 @@ PURPLE='\e[0;95m'      # Purple
 CYAN='\e[0;96m'        # Cyan
 WHITE='\e[0;97m'       # White
 
-PS1="\[$GREEN\]\w\[\033[m\]\[$BLUE\]\$(__git_ps1)\[$BLACK\]: "
+PS1="\[$GREEN\]\w\[\033[m\]\[$BLUE\]\$(__git_ps1)\[$WHITE\]: "
