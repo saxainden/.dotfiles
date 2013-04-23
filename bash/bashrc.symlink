@@ -13,7 +13,14 @@ WHITE='\e[0;97m'       # White
 
 PS1="\[$GREEN\]\w\[\033[m\]\[$BLUE\]\$(__git_ps1)\[$WHITE\]: "
 
-alias db_cleanup="rake db:drop db:create db:migrate db:seed db:test:prepare"
+alias dbc="rake db:drop db:create db:migrate db:seed db:test:prepare"
 alias bi="bundle install"
 alias rr="rake routes"
 alias c='cd ~/code'
+alias d="cd ~/.dotfiles"
+alias g="git status"
+alias gca="git commit -a"
+alias gd="git diff"
+alias rc="rails console"
+alias rdm="rake db:migrate"
+alias rs="rails server"
