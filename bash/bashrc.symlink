@@ -12,3 +12,7 @@ CYAN='\e[0;96m'        # Cyan
 WHITE='\e[0;97m'       # White
 
 PS1="\[$GREEN\]\w\[\033[m\]\[$BLUE\]\$(__git_ps1)\[$WHITE\]: "
+
+alias=db_cleanup rake db:drop db:create db:migrate db:seed db:test:prepare
+alias=bi bundle install
+alias=rr rake routes
