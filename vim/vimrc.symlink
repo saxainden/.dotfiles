@@ -20,6 +20,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'ecomba/vim-ruby-refactoring'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -157,3 +158,14 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+" Ruby Refactor
+:nnoremap <leader>rap  :RAddParameter<cr>
+:nnoremap <leader>rcpc :RConvertPostConditional<cr>
+:nnoremap <leader>rel  :RExtractLet<cr>
+:vnoremap <leader>rec  :RExtractConstant<cr>
+:vnoremap <leader>relv :RExtractLocalVariable<cr>
+:nnoremap <leader>rit  :RInlineTemp<cr>
+:vnoremap <leader>rrlv :RRenameLocalVariable<cr>
+:vnoremap <leader>rriv :RRenameInstanceVariable<cr>
+:vnoremap <leader>rem  :RExtractMethod<cr>
