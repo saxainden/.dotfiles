@@ -93,3 +93,8 @@ nmap <leader>a> :Tabularize /=><cr>
 :vnoremap <leader>rrlv :RRenameLocalVariable<cr>
 :vnoremap <leader>rriv :RRenameInstanceVariable<cr>
 :vnoremap <leader>rem  :RExtractMethod<cr>
+
+" Typos
+:command WQ wq
+:command W w
+:command Q q
