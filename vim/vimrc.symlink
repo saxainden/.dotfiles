@@ -96,5 +96,6 @@ nmap <leader>a> :Tabularize /=><cr>
 
 " Typos
 :command WQ wq
+:command Wq wq
 :command W w
 :command Q q
