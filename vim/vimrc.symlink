@@ -20,6 +20,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'Valloric/YouCompleteMe'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
