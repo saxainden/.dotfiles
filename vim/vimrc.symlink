@@ -21,6 +21,7 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -71,6 +72,13 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+vmap <Leader>bb :!bundle install
+vmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall
+
+map <Leader>vc :RVcontroller<cr>
+map <Leader>vm :RVmodel<cr>
+map <Leader>vv :RVview<cr>
 
 " " Rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
