@@ -80,6 +80,11 @@ map <Leader>vc :RVcontroller<cr>
 map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
 
+" Ultisnip and YouCompleteMe
+let g:ycm_key_list_previous_completion=['<Up>']
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsListSnippets="<c-k>"
+
 " " Rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
