@@ -15,6 +15,7 @@ PS1="\[$GREEN\]\w\[\033[m\]\[$BLUE\]\$(__git_ps1)\[$WHITE\]: "
 
 alias dbc="rake db:drop db:create db:migrate db:seed db:test:prepare"
 alias bi="bundle install"
+alias be="bundle exec"
 alias rr="rake routes"
 alias c='cd ~/code'
 alias d="cd ~/.dotfiles"
@@ -28,3 +29,4 @@ alias rdm="rake db:migrate"
 alias rg="rails generate"
 alias rd="rails destroy"
 alias rs="rails server"
+alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
