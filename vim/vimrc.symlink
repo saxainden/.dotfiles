@@ -17,11 +17,11 @@ Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
-Bundle 'thoughtbot/vim-rspec'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
+Bundle 'janx/vim-rubytest'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -85,11 +85,6 @@ let g:ycm_key_list_previous_completion=['<Up>']
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsListSnippets="<c-k>"
 
-" " Rspec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-
 """""""""""""""""""""""""""TABULARIZE"""""""""""""""""""""""""""""""""""""""""
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
@@ -97,7 +92,9 @@ nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <leader>a> :Tabularize /=><cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby Refactor
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :nnoremap <leader>rap  :RAddParameter<cr>
 :nnoremap <leader>rcpc :RConvertPostConditional<cr>
 :nnoremap <leader>rel  :RExtractLet<cr>
@@ -108,7 +105,9 @@ nmap <leader>a> :Tabularize /=><cr>
 :vnoremap <leader>rriv :RRenameInstanceVariable<cr>
 :vnoremap <leader>rem  :RExtractMethod<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Typos
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :command WQ wq
 :command Wq wq
 :command W w
