@@ -71,4 +71,4 @@ alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 
 #PROMPT
 source ~/.zshrc.sh
-PROMPT='$fg[white]%~$(git_super_status): '
+PROMPT='%~$(git_super_status): '
