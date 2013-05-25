@@ -1,0 +1,74 @@
+# Add paths
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/usr/lib/php/pear
+export PATH="$PATH:/usr/bin/python"
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+export EDITOR='vim -f'
+eval "$(rbenv init -)"
+
+# Colorize terminal
+export TERM='xterm-color'
+alias ls='ls -G'
+alias ll='ls -lG'
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+export GREP_OPTIONS="--color"
+
+# Nicer history
+export HISTSIZE=100000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+
+# Use vim as the editor
+export EDITOR=vim
+
+# Use C-x C-e to edit the current command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
+
+# By default, zsh considers many characters part of a word (e.g., _ and -).
+# Narrow that down to allow easier skipping through words via M-f and M-b.
+export WORDCHARS='*?[]~&;!$%^<>'
+
+# Highlight search results in ack.
+export ACK_COLOR_MATCH='red'
+
+# Aliases
+alias t="script/test $*"
+alias f="script/features $*"
+alias z="zeus $*"
+alias r="echo NOPE"
+function lack() {
+    # The +k clears the screen (it tries to scroll up but there's nowhere to
+    # go)
+    ack --group --color $* | less -r +k
+}
+
+
+alias dbc="rake db:drop db:create db:migrate db:seed db:test:prepare"
+alias bi="bundle install"
+alias be="bundle exec"
+alias rr="rake routes"
+alias c='cd ~/code'
+alias d="cd ~/.dotfiles"
+alias g="git status"
+alias ga="git add" 
+alias gc="git commit -v"
+alias gca="git commit -a -v"
+alias gd="git diff"
+alias grc="git rebase --continue"
+alias gri="git rebase -i"
+alias griup="git rebase -i @{u}"
+alias gp="git pull --rebase"
+alias rc="rails console"
+alias rdm="rake db:migrate"
+alias rg="rails generate"
+alias rd="rails destroy"
+alias rs="rails server"
+alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
+
+#PROMPT
+source ~/.zshrc.sh
+PROMPT='$fg[white]%~$(git_super_status): '
