@@ -21,7 +21,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
-Bundle 'janx/vim-rubytest'
+Bundle 'thoughtbot/vim-rspec'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -114,11 +114,6 @@ nmap <leader>a> :Tabularize /=><cr>
 :command Q q
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Clear the search buffer when hitting return
-function! MapCR()
-  nnoremap <cr> :nohlsearch<cr>
-endfunction
-call MapCR()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
@@ -133,3 +128,8 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
+
+" Rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
