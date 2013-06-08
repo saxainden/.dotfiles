@@ -22,6 +22,7 @@ Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'nono/vim-handlebars'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -133,3 +134,5 @@ map <leader>n :call RenameFile()<cr>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
+
+let g:rspec_command = "zeus rspec {spec}"
