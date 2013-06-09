@@ -23,6 +23,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'nono/vim-handlebars'
+Bundle 'Raimondi/delimitMate'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
