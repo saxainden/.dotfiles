@@ -71,6 +71,8 @@ alias rd="rails destroy"
 alias rs="rails server"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 
+#pretty json
+alias json="python -mjson.tool"
 #PROMPT
 source ~/.zshrc.sh
 PROMPT='%~$(git_super_status): '
