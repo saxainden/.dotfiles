@@ -76,3 +76,8 @@ alias json="python -mjson.tool"
 #PROMPT
 source ~/.zshrc.sh
 PROMPT='%~$(git_super_status): '
+
+terminate_psql_connections() {
+  psql xep -c "select pg_terminate_backend(pid) from pg_stat_activity where datname='$1'"
+}
+
