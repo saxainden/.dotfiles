@@ -139,4 +139,4 @@ map <Leader>l :call RunLastSpec()<CR>
 let g:rspec_command = "!zeus rspec {spec}"
 
 " Notes
-map <Leader>nn :sp "~/Dropbox/notes/todo.txt"<cr>
+map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
