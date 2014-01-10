@@ -19,8 +19,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'SirVer/ultisnips'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'nono/vim-handlebars'
 Bundle 'Raimondi/delimitMate'
@@ -82,10 +80,6 @@ map <Leader>vc :RVcontroller<cr>
 map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
 
-" Ultisnip and YouCompleteMe
-let g:ycm_key_list_previous_completion=['<Up>']
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsListSnippets="<c-k>"
 
 """""""""""""""""""""""""""TABULARIZE"""""""""""""""""""""""""""""""""""""""""
 nmap <Leader>a= :Tabularize /=<CR>
