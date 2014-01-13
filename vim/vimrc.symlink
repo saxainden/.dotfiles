@@ -22,6 +22,7 @@ Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'nono/vim-handlebars'
 Bundle 'Raimondi/delimitMate'
+Bundle 'wting/rust.vim'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
