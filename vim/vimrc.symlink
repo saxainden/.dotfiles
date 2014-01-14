@@ -23,6 +23,7 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'nono/vim-handlebars'
 Bundle 'Raimondi/delimitMate'
 Bundle 'wting/rust.vim'
+Bundle 'hallison/vim-markdown'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -44,6 +45,8 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+"" Yank to clipboard
+set clipboard=unnamed
 " Remap open file in new tab keys
 let g:ctrlp_prompt_mappings = {
   \ 'AccepSelection("e")': ['<cr>'],
