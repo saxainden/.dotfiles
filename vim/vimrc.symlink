@@ -141,6 +141,3 @@ let g:rspec_command = "!zeus rspec {spec}"
 
 " Notes
 map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
-
-" NERDTree
-map <Leader>nt :NERDTreeToggle<cr>
