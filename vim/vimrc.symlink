@@ -13,7 +13,7 @@ Bundle 'tpope/vim-commentary.git'
 Bundle 'tpope/vim-repeat.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-fugitive'
-Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
@@ -134,7 +134,22 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 
-let g:rspec_command = "!zeus rspec {spec}"
+let g:rspec_command = "!rspec {spec}"
 
 " Notes
 map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
+
+" 80 Column line
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif

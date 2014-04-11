@@ -82,3 +82,9 @@ terminate_psql_connections() {
   psql xep -c "select pg_terminate_backend(pid) from pg_stat_activity where datname='$1'"
 }
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+function rbenvsudo(){
+  executable=$1
+  shift 1
+  sudo $(rbenv which $executable) $*
+}
