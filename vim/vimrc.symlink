@@ -135,7 +135,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 
-let g:rspec_command = "!zeus rspec {spec}"
+let g:rspec_command = "!rspec {spec}"
 
 " Notes
 map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
