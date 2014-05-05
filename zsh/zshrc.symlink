@@ -1,6 +1,7 @@
 # Add paths
 export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/usr/lib/php/pear
 export PATH="$PATH:/usr/bin/python"
+export PATH="$PATH:/usr/local/go/bin"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
