@@ -25,6 +25,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'hallison/vim-markdown'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'slim-template/vim-slim.git'
+Bundle 'tpope/vim-haml'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
