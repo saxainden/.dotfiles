@@ -72,6 +72,7 @@ alias rd="rails destroy"
 alias rs="rails server"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias tmux="TERM=screen-256color-bce tmux"
+alias switch="tmux switch -t"
 
 #pretty json
 alias json="python -mjson.tool"
