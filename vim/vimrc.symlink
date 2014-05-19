@@ -26,6 +26,7 @@ Bundle 'hallison/vim-markdown'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'tpope/vim-haml'
+Bundle "pangloss/vim-javascript"
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -136,7 +137,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 
-let g:rspec_command = "!rspec {spec}"
+let g:rspec_command = "!spring rspec {spec} --color"
 
 " Notes
 map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
