@@ -31,6 +31,7 @@ Bundle "pangloss/vim-javascript"
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 syntax enable
+set re=1 "use old regex engine for syntax highlighing. new one is slow
 filetype plugin indent on       " load file type plugins + indentation
 set number                      " show line numbers
 set guifont=Inconsolata:h16
