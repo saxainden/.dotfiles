@@ -27,6 +27,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'tpope/vim-haml'
 Bundle "pangloss/vim-javascript"
+Bundle "scrooloose/syntastic"
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -38,6 +39,7 @@ set guifont=Inconsolata:h16
 "" Whitespace
 set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+set softtabstop=2
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 set autoindent
