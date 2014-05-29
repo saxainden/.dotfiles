@@ -140,7 +140,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 
-let g:rspec_command = "!spring rspec {spec} --color"
+let g:rspec_command = "!rspec {spec} --color"
 
 " Notes
 map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
