@@ -49,10 +49,11 @@ function lack() {
 }
 
 
-alias dbc="rake db:drop db:create db:migrate db:seed db:test:prepare"
+alias prepdb= "bundle exec rake db:migrate db:test:prepare"
 alias bi="bundle install"
 alias be="bundle exec"
 alias rr="rake routes"
+alias rrg="rake routes | grep"
 alias c='cd ~/code'
 alias d="cd ~/.dotfiles"
 alias g="git status"
