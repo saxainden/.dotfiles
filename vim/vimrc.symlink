@@ -29,6 +29,7 @@ Bundle 'tpope/vim-haml'
 Bundle "pangloss/vim-javascript"
 Bundle "scrooloose/syntastic"
 Bundle "elixir-lang/vim-elixir"
+Bundle "BjRo/vim-extest"
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -140,6 +141,11 @@ map <leader>n :call RenameFile()<cr>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
+
+" Elixir Extest mappings
+autocmd FileType elixir map <leader>t :ExTestRunFile<CR>
+autocmd FileType elixir map <leader>s :ExTestRunTest<CR>
+autocmd FileType elixir map <leader>l :ExTestRunLast<CR>
 
 let g:rspec_command = "!bundle exec rspec {spec} --color"
 
