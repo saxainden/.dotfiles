@@ -30,22 +30,3 @@ bind-key -r C-l select-window -t :+
 set-option -g mouse-select-pane on
 set-option -g mouse-select-window on
 set-window-option -g mode-mouse on
-
-bind C-s run-shell ~/.tmux/plugins/tmux-resurrect/scripts/save.sh
-bind C-r run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
-
-# KEEP THIS AT THE BOTTOM
-# List of plugins
-# Supports `github_username/repo` or full git URLs
-set -g @tpm_plugins "              \
-  tmux-plugins/tpm                 \
-  tmux-plugins/tmux-sensible       \
-  tmux-plugins/tmux-resurrect      \
-"
-# Other examples:
-# github_username/plugin_name    \
-# git@github.com/user/plugin     \
-# git@bitbucket.com/user/plugin  \
-
-# initializes TMUX plugin manager
-run-shell ~/.tmux/plugins/tpm/tpm
