@@ -32,6 +32,9 @@ Bundle "elixir-lang/vim-elixir"
 Bundle "BjRo/vim-extest"
 Bundle "wting/rust.vim"
 Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fireplace'
+Bundle 'guns/vim-clojure-highlight'
+Bundle 'guns/vim-clojure-static'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
