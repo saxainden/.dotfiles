@@ -4,7 +4,7 @@ export PATH="$PATH:/usr/bin/python"
 export PATH="$PATH:/usr/local/go/bin"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/usr/local/share/npm/bin/:$PATH"
+export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 eval "$(rbenv init -)"
