@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
  " let Vundle manage Vundle
- "" required! 
+ "" required!
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-rails.git'
@@ -159,7 +159,7 @@ autocmd FileType elixir map <leader>t :ExTestRunFile<CR>
 autocmd FileType elixir map <leader>s :ExTestRunTest<CR>
 autocmd FileType elixir map <leader>l :ExTestRunLast<CR>
 
-let g:rspec_command = "!zeus rspec {spec} --color"
+let g:rspec_command = "!bundle exec rspec {spec} --color"
 
 " Notes
 map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
@@ -179,3 +179,12 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+
+" Removes trailing spaces
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
