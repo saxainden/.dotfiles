@@ -8,33 +8,39 @@ call vundle#rc()
  "" required!
 Bundle 'gmarik/vundle'
 
-Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-commentary.git'
 Bundle 'tpope/vim-repeat.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'Raimondi/delimitMate'
+Bundle "scrooloose/syntastic"
+
+Bundle 'tpope/vim-rails.git'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'thoughtbot/vim-rspec'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'Raimondi/delimitMate'
+
 Bundle 'hallison/vim-markdown'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'tpope/vim-haml'
 Bundle "pangloss/vim-javascript"
-Bundle "scrooloose/syntastic"
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'bling/vim-airline'
+Bundle "wting/rust.vim"
+
 Bundle "elixir-lang/vim-elixir"
 Bundle "BjRo/vim-extest"
-Bundle "wting/rust.vim"
-Bundle 'bling/vim-airline'
+
 Bundle 'tpope/vim-fireplace'
 Bundle 'guns/vim-clojure-highlight'
 Bundle 'guns/vim-clojure-static'
+Bundle 'guns/vim-sexp'
+Bundle 'tpope/vim-sexp-mappings-for-regular-people'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
