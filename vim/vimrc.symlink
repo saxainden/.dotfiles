@@ -38,7 +38,7 @@ Bundle 'guns/vim-clojure-static'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
-syntax enable
+syntax on
 set re=1 "use old regex engine for syntax highlighing. new one is slow
 filetype plugin indent on       " load file type plugins + indentation
 set number                      " show line numbers
@@ -188,3 +188,6 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+
+" vim-clojure-static special words to apply indentation to
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fact', '^facts']
