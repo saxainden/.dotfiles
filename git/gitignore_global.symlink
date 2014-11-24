@@ -46,3 +46,8 @@ Thumbs.db
 # CTAGS #
 ####################
 tags
+
+# CLOJURE #
+# ##################
+.lein-repl-history
+.nrepl-port
