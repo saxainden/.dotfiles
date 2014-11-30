@@ -34,7 +34,7 @@ Bundle 'bling/vim-airline'
 Bundle "wting/rust.vim"
 
 Bundle "elixir-lang/vim-elixir"
-Bundle "BjRo/vim-extest"
+Bundle "seankay/vim-extest"
 
 Bundle 'tpope/vim-fireplace'
 Bundle 'guns/vim-clojure-highlight'
