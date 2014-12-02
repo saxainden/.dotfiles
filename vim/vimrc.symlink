@@ -165,7 +165,7 @@ autocmd FileType elixir map <leader>t :ExTestRunFile<CR>
 autocmd FileType elixir map <leader>s :ExTestRunTest<CR>
 autocmd FileType elixir map <leader>l :ExTestRunLast<CR>
 
-let g:rspec_command = "!bundle exec rspec {spec} --color"
+let g:rspec_command = "!spring rspec {spec} --color"
 
 " Notes
 map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
