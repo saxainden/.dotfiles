@@ -51,3 +51,7 @@ tags
 # ##################
 .lein-repl-history
 .nrepl-port
+
+# RUBY #
+# #################
+.env
