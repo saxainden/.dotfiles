@@ -214,3 +214,10 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 " vim-clojure-static special words to apply indentation to
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fact', '^facts']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" syntastic special words to apply indentation to
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_mode_map={ 'mode': 'active',
+                     \ 'active_filetypes': [],
+                     \ 'passive_filetypes': ['html'] }
