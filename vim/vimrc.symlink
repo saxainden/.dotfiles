@@ -18,7 +18,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Raimondi/delimitMate'
-Bundle "scrooloose/syntastic"
+Bundle 'scrooloose/syntastic'
 
 Bundle 'tpope/vim-rails.git'
 Bundle 'ecomba/vim-ruby-refactoring'
@@ -28,22 +28,12 @@ Bundle 'hallison/vim-markdown'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'tpope/vim-haml'
-Bundle "pangloss/vim-javascript"
+Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'bling/vim-airline'
-Bundle "wting/rust.vim"
 
-Bundle "elixir-lang/vim-elixir"
-Bundle "seankay/vim-extest"
-
-Bundle 'tpope/vim-fireplace'
-Bundle 'guns/vim-clojure-highlight'
-Bundle 'guns/vim-clojure-static'
-Bundle 'guns/vim-sexp'
-Bundle 'tpope/vim-sexp-mappings-for-regular-people'
-
-Bundle 'derekwyatt/vim-scala'
-Bundle 'gre/play2vim'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'seankay/vim-extest'
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
