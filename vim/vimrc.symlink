@@ -42,6 +42,9 @@ Bundle 'guns/vim-clojure-static'
 Bundle 'guns/vim-sexp'
 Bundle 'tpope/vim-sexp-mappings-for-regular-people'
 
+Bundle 'derekwyatt/vim-scala'
+Bundle 'gre/play2vim'
+
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 syntax on
@@ -83,7 +86,7 @@ let g:ctrlp_prompt_mappings = {
 
 "Theme
 set t_Co=256
-color summerfruit256
+color jelleybeans
 
 " MAPPINGS
 " use comma as <Leader> key instead of backslash
