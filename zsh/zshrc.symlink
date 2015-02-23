@@ -8,6 +8,8 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.exenv/bin:$PATH"
 export JAVA_HOME="$(/usr/libexec/java_home)"
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 eval "$(rbenv init -)"
 eval "$(exenv init -)"
