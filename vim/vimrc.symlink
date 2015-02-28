@@ -175,8 +175,8 @@ map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
 " 80 Column line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if exists('+colorcolumn')
-  set colorcolumn=80
-  hi colorcolumn ctermbg=gray
+  set colorcolumn=120
+  hi colorcolumn ctermbg=darkred
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
@@ -210,4 +210,4 @@ let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fact', '^facts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
-                     \ 'passive_filetypes': ['html'] }
+                     \ 'passive_filetypes': ['html', 'js'] }
