@@ -76,7 +76,7 @@ let g:ctrlp_prompt_mappings = {
 
 "Theme
 set t_Co=256
-color jelleybeans
+color summerfruit256
 
 " MAPPINGS
 " use comma as <Leader> key instead of backslash
@@ -164,7 +164,7 @@ autocmd FileType elixir map <leader>t :ExTestRunFile<CR>
 autocmd FileType elixir map <leader>s :ExTestRunTest<CR>
 autocmd FileType elixir map <leader>l :ExTestRunLast<CR>
 
-let g:rspec_command = "!bundle exec spring rspec {spec} --color"
+let g:rspec_command = "!spring rspec {spec} --color"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Notes
@@ -175,7 +175,7 @@ map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
 " 80 Column line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if exists('+colorcolumn')
-  set colorcolumn=120
+  set colorcolumn=80
   hi colorcolumn ctermbg=darkred
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
