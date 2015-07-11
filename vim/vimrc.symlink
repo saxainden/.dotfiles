@@ -77,7 +77,7 @@ let g:ctrlp_prompt_mappings = {
 
 "Theme
 set t_Co=256
-color Monokai
+color jellybeans
 
 " MAPPINGS
 " use comma as <Leader> key instead of backslash
@@ -177,7 +177,7 @@ map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if exists('+colorcolumn')
   set colorcolumn=80
-  hi colorcolumn ctermbg=darkred
+  hi colorcolumn ctermbg=black
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
@@ -212,3 +212,4 @@ let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fact', '^facts
 let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
                      \ 'passive_filetypes': ['html', 'js'] }
+let g:syntastic_javascript_checkers = ['eslint']
