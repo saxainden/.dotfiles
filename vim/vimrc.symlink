@@ -31,6 +31,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'bling/vim-airline'
+Bundle 'mxw/vim-jsx'
 
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'seankay/vim-extest'
