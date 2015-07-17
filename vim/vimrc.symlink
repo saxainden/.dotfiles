@@ -19,6 +19,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-dispatch'
 
 Bundle 'tpope/vim-rails.git'
 Bundle 'ecomba/vim-ruby-refactoring'
@@ -165,7 +166,7 @@ autocmd FileType elixir map <leader>t :ExTestRunFile<CR>
 autocmd FileType elixir map <leader>s :ExTestRunTest<CR>
 autocmd FileType elixir map <leader>l :ExTestRunLast<CR>
 
-let g:rspec_command = "!spring rspec {spec} --color"
+let g:rspec_command = "Dispatch vagrant ssh -c 'source ~/.zshrc && bundle exec rspec {spec}'"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Notes
