@@ -81,6 +81,7 @@ alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias tmux="TERM=screen-256color-bce tmux"
 alias switch="tmux switch -t"
 alias rust-update="curl -s https://static.rust-lang.org/rustup.sh | sudo sh"
+alias mux="TERM=screen-256color-bce tmuxinator"
 
 #pretty json
 alias json="python -mjson.tool"
