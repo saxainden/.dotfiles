@@ -78,7 +78,7 @@ let g:ctrlp_prompt_mappings = {
 
 "Theme
 set t_Co=256
-color jelleybeans
+color atom-dark-256
 
 " MAPPINGS
 " use comma as <Leader> key instead of backslash
