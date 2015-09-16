@@ -159,14 +159,14 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 
+let g:rspec_command = "Dispatch vagrant ssh -c 'bash -ic \"cdapp && bundle exec rspec {spec}\"'"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Elixir Extest mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType elixir map <leader>t :ExTestRunFile<CR>
 autocmd FileType elixir map <leader>s :ExTestRunTest<CR>
 autocmd FileType elixir map <leader>l :ExTestRunLast<CR>
-
-let g:rspec_command = "Dispatch vagrant ssh -c 'source ~/.zshrc && bundle exec rspec {spec}'"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Notes
