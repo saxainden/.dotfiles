@@ -2,47 +2,38 @@ set nocompatible                " choose no compatibility with legacy vi
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
  " let Vundle manage Vundle
  "" required!
-Bundle 'gmarik/vundle'
+ ""'VundleVim/Vundle.vim'
+Plugin 'gmarik/Vundle.vim' " let Vundle manage itself
 
-Bundle 'tpope/vim-commentary.git'
-Bundle 'tpope/vim-repeat.git'
-Bundle 'tpope/vim-surround.git'
-Bundle 'tpope/vim-fugitive'
-Bundle 'rking/ag.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'Raimondi/delimitMate'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-dispatch'
+Plugin 'tpope/vim-repeat.git' " repeat . macros
+Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-fugitive' " Git wrapper
+Plugin 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'ajh17/VimCompletesMe'
+Plugin 'Raimondi/delimitMate' " auto complete parens, quotes, etc.
+Plugin 'scrooloose/syntastic' " syntax checker
 
-Bundle 'tpope/vim-rails.git'
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'thoughtbot/vim-rspec'
+Plugin 'davidhalter/jedi-vim' " python autocomplete
+Plugin 'hallison/vim-markdown'
+Plugin 'tpope/vim-haml'
+Plugin 'pangloss/vim-javascript'
+Plugin 'bling/vim-airline'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'elixir-lang/vim-elixir'
 
-Bundle 'hallison/vim-markdown'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'slim-template/vim-slim.git'
-Bundle 'tpope/vim-haml'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'bling/vim-airline'
-Bundle 'mxw/vim-jsx'
-Bundle 'leafgarland/typescript-vim'
-
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'seankay/vim-extest'
+call vundle#end()
+filetype plugin indent on       " load file type plugins + indentation
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 syntax on
 set re=1 "use old regex engine for syntax highlighing. new one is slow
-filetype plugin indent on       " load file type plugins + indentation
 set number                      " show line numbers
 set guifont=Inconsolata:h16
 "" Whitespace
