@@ -11,6 +11,7 @@ Plugin 'gmarik/Vundle.vim' " let Vundle manage itself
 
 Plugin 'tpope/vim-repeat.git' " repeat . macros
 Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-commentary.git'
 Plugin 'tpope/vim-fugitive' " Git wrapper
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
