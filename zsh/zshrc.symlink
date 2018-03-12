@@ -2,21 +2,10 @@
 export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/usr/lib/php/pear
 export PATH="$PATH:/usr/bin/python"
 export PATH="$PATH:/usr/local/go/bin"
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.exenv/bin:$PATH"
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 
 # Docker Timeout Fix
 export DOCKER_CLIENT_TIMEOUT=120
 export COMPOSE_HTTP_TIMEOUT=120
-
-eval "$(rbenv init -)"
-eval "$(exenv init -)"
 
 export EDITOR='vim -f'
 # Colorize terminal

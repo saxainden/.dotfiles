@@ -16,7 +16,7 @@ Plugin 'tpope/vim-fugitive' " Git wrapper
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'ajh16/VimCompletesMe'
+Plugin 'ajh17/VimCompletesMe'
 Plugin 'Raimondi/delimitMate' " auto complete parens, quotes, etc.
 Plugin 'scrooloose/syntastic' " syntax checker
 
