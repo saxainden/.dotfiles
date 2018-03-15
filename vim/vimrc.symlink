@@ -164,7 +164,7 @@ autocmd FileType elixir map <leader>l :ExTestRunLast<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Notes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>nn :sp ~/Dropbox/notes/todo.txt<cr>
+map <Leader>nn :sp ~/Google Drive/todo.txt<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 80 Column line
