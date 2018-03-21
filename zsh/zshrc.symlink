@@ -28,6 +28,10 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
+# binding for word bound backward/forward for osx
+bindkey "^[f" forward-word
+bindkey "^[b" backward-word
+
 # By default, zsh considers many characters part of a word (e.g., _ and -).
 # Narrow that down to allow easier skipping through words via M-f and M-b.
 export WORDCHARS='*?[]~&;!$%^<>'
