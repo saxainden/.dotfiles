@@ -99,3 +99,5 @@ function rbenvsudo(){
   shift 1
   sudo $(rbenv which $executable) $*
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

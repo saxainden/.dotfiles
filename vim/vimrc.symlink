@@ -1,39 +1,31 @@
 set nocompatible                " choose no compatibility with legacy vi
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
- " let Vundle manage Vundle
- "" required!
- ""'VundleVim/Vundle.vim'
-Plugin 'gmarik/Vundle.vim' " let Vundle manage itself
+set rtp+=/usr/local/opt/fzf
 
-Plugin 'tpope/vim-repeat.git' " repeat . macros
-Plugin 'tpope/vim-surround.git'
-Plugin 'tpope/vim-commentary.git'
-Plugin 'tpope/vim-fugitive' " Git wrapper
-Plugin 'rking/ag.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ajh17/VimCompletesMe'
-Plugin 'Raimondi/delimitMate' " auto complete parens, quotes, etc.
-Plugin 'scrooloose/syntastic' " syntax checker
-
-Plugin 'davidhalter/jedi-vim' " python autocomplete
-Plugin 'hallison/vim-markdown'
-Plugin 'tpope/vim-haml'
-Plugin 'pangloss/vim-javascript'
-Plugin 'bling/vim-airline'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'elixir-lang/vim-elixir'
-
-call vundle#end()
-filetype plugin indent on       " load file type plugins + indentation
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-repeat' " repeat . macros
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive' " Git wrapper
+Plug 'rking/ag.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'ajh17/VimCompletesMe'
+Plug 'Raimondi/delimitMate' " auto complete parens, quotes, etc.
+Plug 'hallison/vim-markdown'
+Plug 'tpope/vim-haml'
+Plug 'pangloss/vim-javascript'
+Plug 'bling/vim-airline'
+Plug 'w0rp/ale'
+call plug#end()
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
-syntax on
 set re=1 "use old regex engine for syntax highlighing. new one is slow
 set number                      " show line numbers
 set guifont=Inconsolata:h16
@@ -109,19 +101,6 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <leader>a> :Tabularize /=><cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ruby Refactor
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:nnoremap <leader>rap  :RAddParameter<cr>
-:nnoremap <leader>rcpc :RConvertPostConditional<cr>
-:nnoremap <leader>rel  :RExtractLet<cr>
-:vnoremap <leader>rec  :RExtractConstant<cr>
-:vnoremap <leader>relv :RExtractLocalVariable<cr>
-:nnoremap <leader>rit  :RInlineTemp<cr>
-:vnoremap <leader>rrlv :RRenameLocalVariable<cr>
-:vnoremap <leader>rriv :RRenameInstanceVariable<cr>
-:vnoremap <leader>rem  :RExtractMethod<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Typos
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :command WQ wq
@@ -146,31 +125,15 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Rspec.vim mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-
-let g:rspec_command = "Dispatch vagrant ssh -c 'bash -ic \"cdapp && bundle exec rspec {spec}\"'"
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Elixir Extest mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType elixir map <leader>t :ExTestRunFile<CR>
-autocmd FileType elixir map <leader>s :ExTestRunTest<CR>
-autocmd FileType elixir map <leader>l :ExTestRunLast<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Notes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <Leader>nn :sp ~/Google Drive/todo.txt<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 80 Column line
+" 100 Column line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if exists('+colorcolumn')
-  set colorcolumn=80
+  set colorcolumn=100
   hi colorcolumn ctermbg=darkgray
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
@@ -195,32 +158,23 @@ autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-clojure-static special words to apply indentation to
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fact', '^facts']
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" special words to apply indentation to
-let g:syntastic_mode_map={ 'mode': 'active',
-                     \ 'active_filetypes': [],
-                     \ 'passive_filetypes': ['html', 'js'] }
-let g:syntastic_javascript_checkers = ['eslint']
-
-let g:syntastic_ruby_mri_exec='~/.rbenv/versions/2.2.0/bin/ruby'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rspec syntax highlight outside of rails
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
 highlight def link rubyRspec Function
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FZF
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <c-p> :FZF<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ale linter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F7> :ALEToggle<CR>
+nmap <F8> <Plug>(ale_fix)
+let g:ale_fixers = {
+      \   'ruby': ['rubocop'],
+      \}
