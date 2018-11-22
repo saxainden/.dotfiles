@@ -22,6 +22,7 @@ Plug 'tpope/vim-haml'
 Plug 'pangloss/vim-javascript'
 Plug 'bling/vim-airline'
 Plug 'w0rp/ale'
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 set encoding=utf-8
