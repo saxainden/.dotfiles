@@ -179,4 +179,5 @@ map <F7> :ALEToggle<CR>
 nmap <F8> <Plug>(ale_fix)
 let g:ale_fixers = {
       \   'ruby': ['rubocop'],
+      \   'go': ['gofmt'],
       \}
