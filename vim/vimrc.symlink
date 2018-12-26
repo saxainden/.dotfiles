@@ -24,6 +24,7 @@ Plug 'bling/vim-airline'
 Plug 'w0rp/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'fatih/vim-go'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 set encoding=utf-8
@@ -181,3 +182,9 @@ let g:ale_fixers = {
       \   'ruby': ['rubocop'],
       \   'go': ['gofmt'],
       \}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Terraform
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:terraform_align=1  "override indentation for tf files
+let g:terraform_fmt_on_save=1 "format on save
