@@ -84,7 +84,7 @@ alias rg="rails generate"
 alias rd="rails destroy"
 alias rs="rails server"
 alias ctags="`brew --prefix`/bin/ctags"
-alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
+alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=node_modules --exclude=test *'
 alias tmux="TERM=screen-256color-bce tmux"
 alias switch="tmux switch -t"
 alias rust-update="curl -s https://static.rust-lang.org/rustup.sh | sudo sh"
