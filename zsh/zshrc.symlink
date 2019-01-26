@@ -15,11 +15,8 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 export DOCKER_CLIENT_TIMEOUT=120
 export COMPOSE_HTTP_TIMEOUT=120
 
-export EDITOR='vim -f'
 # Colorize terminal
 export TERM='xterm-color'
-alias ls='ls -G'
-alias ll='ls -lG'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
@@ -29,7 +26,7 @@ export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
 # Use vim as the editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # Use C-x C-e to edit the current command line
 autoload -U edit-command-line
@@ -48,22 +45,7 @@ export WORDCHARS='*?[]~&;!$%^<>'
 export ACK_COLOR_MATCH='red'
 
 # Aliases
-alias t="script/test $*"
-alias f="script/features $*"
-alias z="zeus $*"
-alias r="echo NOPE"
-function lack() {
-    # The +k clears the screen (it tries to scroll up but there's nowhere to
-    # go)
-    ack --group --color $* | less -r +k
-}
-
-
-alias prepdb= "bundle exec rake db:migrate db:test:prepare"
-alias bi="bundle install"
-alias be="bundle exec"
-alias rr="rake routes"
-alias rrg="rake routes | grep"
+alias ls='ls -G'
 alias c='cd ~/code'
 alias d="cd ~/code/.dotfiles"
 alias g="git status"
@@ -77,18 +59,13 @@ alias griup="git rebase -i @{u}"
 alias gp="git pull --rebase"
 alias gm="git merge --no-ff"
 alias gprune="git checkout master;git branch --merged master | grep -v 'master$' | xargs git branch -d"
-alias r="rails"
-alias rc="rails console"
-alias rdm="rake db:migrate"
-alias rg="rails generate"
-alias rd="rails destroy"
-alias rs="rails server"
 alias ctags="`brew --prefix`/bin/ctags"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=node_modules --exclude=test *'
 alias tmux="TERM=screen-256color-bce tmux"
 alias switch="tmux switch -t"
-alias rust-update="curl -s https://static.rust-lang.org/rustup.sh | sudo sh"
 alias mux="TERM=screen-256color-bce tmuxinator"
+alias vim='nvim'
+alias vimdiff='nvim -d'
 
 #pretty json
 alias json="python -mjson.tool"
@@ -108,7 +85,6 @@ function rbenvsudo(){
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 removecontainers() {
     docker stop $(docker ps -aq)
