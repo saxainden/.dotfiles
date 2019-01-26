@@ -12,7 +12,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive' " Git wrapper
 Plug 'rking/ag.vim'
-Plug 'flazz/vim-colorschemes'
 Plug 'ajh17/VimCompletesMe'
 Plug 'Raimondi/delimitMate' " auto complete parens, quotes, etc.
 Plug 'hallison/vim-markdown'
@@ -25,6 +24,7 @@ Plug 'fatih/vim-go'
 Plug 'hashivim/vim-terraform'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 set encoding=utf-8
@@ -52,13 +52,15 @@ set smartcase                   " ... unless they contain at least one capital l
 "" Vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'codedark'
 
 "" Yank to clipboard
 set clipboard=unnamed
 
 "Theme
 set t_Co=256
-color atom-dark-256
+set t_ut=
+color codedark
 
 " MAPPINGS
 " use comma as <Leader> key instead of backslash
