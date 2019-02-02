@@ -25,6 +25,9 @@ Plug 'hashivim/vim-terraform'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tomasiser/vim-code-dark'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
+Plug 'benmills/vimux-golang'
 call plug#end()
 
 set encoding=utf-8
@@ -79,6 +82,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" splits
+nnoremap <silent> <Leader>\ <C-w>v
+nnoremap <silent> <Leader>- <C-w>s
 
 vmap <Leader>bb :!bundle install
 vmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall
@@ -175,3 +182,16 @@ let g:ale_fixers = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:terraform_align=1  "override indentation for tf files
 let g:terraform_fmt_on_save=1 "format on save
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimux
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>vi :VimuxInspectRunner<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimux Golang
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
+map <Leader>rf :wa<CR> :GolangTestFocused<CR>

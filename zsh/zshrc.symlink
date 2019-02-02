@@ -15,6 +15,30 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 export DOCKER_CLIENT_TIMEOUT=120
 export COMPOSE_HTTP_TIMEOUT=120
 
+# VIM mode
+# https://dougblack.io/words/zsh-vi-mode.html
+bindkey -v
+bindkey -M viins 'jj' vi-cmd-mode # exit with jj
+
+# FZF through history
+bindkey '^P' fh #ctrl+p to envoke func
+zle -N fh{,} # create fh widget
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[green]%} [% NORMAL]%  %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=20 # reduce key lag between modes
+
+
+
 # Colorize terminal
 export TERM='xterm-color'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
@@ -84,6 +108,7 @@ function rbenvsudo(){
   sudo $(rbenv which $executable) $*
 }
 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 removecontainers() {
