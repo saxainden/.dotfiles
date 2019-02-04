@@ -53,7 +53,7 @@ function git_current_branch() {
 }
 
 # Colorize terminal
-export TERM='xterm-color'
+export TERM="screen-256color"
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
