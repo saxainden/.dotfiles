@@ -43,3 +43,5 @@ set-window-option -g mode-keys vi
 
 # remove delay in vim mode switching: https://superuser.com/questions/252214/slight-delay-when-switching-modes-in-vim-using-tmux-or-screen/252717#252717
 set -sg escape-time 0
+
+set -g mouse on
