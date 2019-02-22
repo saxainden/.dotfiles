@@ -92,7 +92,7 @@ export ACK_COLOR_MATCH='red'
 # Aliases
 alias ls='ls -G'
 alias c='cd ~/code'
-alias d="cd ~/code/.dotfiles"
+alias d="cd ~/.dotfiles"
 alias g="git status"
 alias ga="git add --all"
 alias gc="git commit -v"
@@ -138,6 +138,7 @@ removecontainers() {
     docker rm $(docker ps -aq)
 }
 
+# Docker
 docker_purge() {
     removecontainers
     docker network prune -f
@@ -146,5 +147,11 @@ docker_purge() {
     docker rmi -f $(docker images -qa)
 }
 
-# Bash completion
- [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+# Antigen
+source /usr/local/share/antigen/antigen.zsh
+
+# antigen def
+antigen bundle zsh-users/zsh-completions
+# antigen def
+
+antigen apply
