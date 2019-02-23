@@ -109,7 +109,6 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=node_modules --exclude=test *'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tmuxinit="TERM=screen-256color-bce tmuxp load `ls ~/.tmuxp | sed 's/.yaml//'`"
-alias switch="tmux switch -t"
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
@@ -155,3 +154,14 @@ antigen bundle zsh-users/zsh-completions
 # antigen def
 
 antigen apply
+
+# Tmux
+switch() {
+  # If not in tmux load with tmuxp
+  if [ -z "${TMUX}" ]; then
+    tmuxp load "$@" -y
+  else
+    # switch session within tmux context
+    tmux switch -t "$@"
+  fi
+}
