@@ -108,8 +108,8 @@ alias gprune="git checkout master;git branch --merged master | grep -v 'master$'
 alias ctags="`brew --prefix`/bin/ctags"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log --exclude=node_modules --exclude=test *'
 alias tmux="TERM=screen-256color-bce tmux"
+alias tmuxinit="TERM=screen-256color-bce tmuxp load `ls ~/.tmuxp | sed 's/.yaml//'`"
 alias switch="tmux switch -t"
-alias mux="TERM=screen-256color-bce tmuxinator"
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
