@@ -1,11 +1,11 @@
 session_name: api
 windows:
   - window_name: editor
-    shell_command_before: cd ~/code/phlexshort-api
+    shell_command_before: cd ~/code/api
     panes:
       - shell_command:
         - vim .
   - window_name: console
-    shell_command_before: cd ~/code/phlexshort-api
+    shell_command_before: cd ~/code/api
     panes:
       -

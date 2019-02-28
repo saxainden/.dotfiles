@@ -1,11 +1,11 @@
 session_name: dataloader
 windows:
   - window_name: editor
-    shell_command_before: cd ~/code/phlexshort-data-loader
+    shell_command_before: cd ~/code/data_loaders
     panes:
       - shell_command:
         - vim .
   - window_name: console
-    shell_command_before: cd ~/code/phlexshort-data-loader
+    shell_command_before: cd ~/code/data_loaders
     panes:
       -
