@@ -37,6 +37,11 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=20 # reduce key lag between modes
 
+
+function gpush() {
+  git push origin `git_current_branch` $@
+}
+
 # Outputs the name of the current branch
 # Usage example: git pull origin $(git_current_branch)
 # Using '--quiet' with 'symbolic-ref' will not cause a fatal error (128) if
@@ -102,7 +107,6 @@ alias grc="git rebase --continue"
 alias gri="git rebase -i"
 alias griup="git rebase -i @{u}"
 alias gpull="git pull --rebase"
-alias gpush="git push origin $(git_current_branch)"
 alias gm="git merge --no-ff"
 alias gprune="git checkout master;git branch --merged master | grep -v 'master$' | xargs git branch -d"
 alias ctags="`brew --prefix`/bin/ctags"
