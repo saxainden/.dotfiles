@@ -201,3 +201,8 @@ map <Leader>rf :wa<CR> :GolangTestFocused<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports" " run go imports on save
 let g:go_gocode_propose_source=0
+let g:go_highlight_functions = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
