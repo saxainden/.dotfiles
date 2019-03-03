@@ -136,6 +136,7 @@ map <Leader>nn :sp ~/Google Drive/todo.txt<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 100 Column line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set textwidth=100
 if exists('+colorcolumn')
   set colorcolumn=100
   hi colorcolumn ctermbg=darkgray
