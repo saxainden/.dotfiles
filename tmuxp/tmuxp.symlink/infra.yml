@@ -5,9 +5,6 @@ windows:
     shell_command_before: cd ~/code/
     panes:
       - shell_command:
-        - cd infrastructure-live
-        - vim .
-      - shell_command:
         - cd infrastructure-modules
         - vim .
   - window_name: console
