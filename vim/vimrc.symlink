@@ -12,10 +12,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive' " Git wrapper
 Plug 'rking/ag.vim'
-Plug 'ajh17/VimCompletesMe'
 Plug 'Raimondi/delimitMate' " auto complete parens, quotes, etc.
 Plug 'hallison/vim-markdown'
-Plug 'tpope/vim-haml'
 Plug 'pangloss/vim-javascript'
 Plug 'bling/vim-airline'
 Plug 'w0rp/ale'
@@ -26,8 +24,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux'
-Plug 'benmills/vimux-golang'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
@@ -184,32 +180,23 @@ let g:ale_fixers = {
 let g:terraform_align=1  "override indentation for tf files
 let g:terraform_fmt_on_save=1 "format on save
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vimux
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>vi :VimuxInspectRunner<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vimux Golang
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
-map <Leader>rf :wa<CR> :GolangTestFocused<CR>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:go_fmt_command = "goimports" " run go imports on save
 let g:go_gocode_propose_source=0
 let g:go_highlight_functions = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
+let g:go_def_mode='gopls' "use gopls for definitions
+let g:go_info_mode = 'gopls' " use gopls for GoInfo
 
 " implement interface
-map <c-i> :GoImpl<CR>
+map <c-i> :GoImports<CR>
+map <Leader>gi :GoImpl<CR>
+map <Leader>i :GoInfo<CR>
+map <Leader>r :GoRename<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " deoplete
