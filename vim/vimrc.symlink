@@ -25,6 +25,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 call plug#end()
 
 set encoding=utf-8
@@ -90,6 +94,11 @@ vmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall
 map <Leader>vc :RVcontroller<cr>
 map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
+
+" cycle through popups with tab
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -174,6 +183,11 @@ let g:ale_fixers = {
       \   'go': ['gofmt'],
       \   'python': ['yapf'],
       \}
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terraform
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -191,12 +205,26 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
 let g:go_def_mode='gopls' "use gopls for definitions
 let g:go_info_mode = 'gopls' " use gopls for GoInfo
+let g:go_auto_type_info = 1
 
 " implement interface
 map <c-i> :GoImports<CR>
 map <Leader>gi :GoImpl<CR>
 map <Leader>i :GoInfo<CR>
 map <Leader>r :GoRename<CR>
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['$GOPATH/bin/gopls'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " deoplete

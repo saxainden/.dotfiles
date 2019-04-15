@@ -46,6 +46,10 @@ function gpush() {
   git push origin `git_current_branch` $@
 }
 
+function rm() {
+  mv "$1" "~/.Trash/$1"
+}
+
 # Outputs the name of the current branch
 # Usage example: git pull origin $(git_current_branch)
 # Using '--quiet' with 'symbolic-ref' will not cause a fatal error (128) if
