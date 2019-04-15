@@ -46,10 +46,6 @@ function gpush() {
   git push origin `git_current_branch` $@
 }
 
-function rm() {
-  mv "$1" "~/.Trash/$1"
-}
-
 # Outputs the name of the current branch
 # Usage example: git pull origin $(git_current_branch)
 # Using '--quiet' with 'symbolic-ref' will not cause a fatal error (128) if
@@ -103,6 +99,7 @@ export WORDCHARS='*?[]~&;!$%^<>'
 export ACK_COLOR_MATCH='red'
 
 # Aliases
+alias rm='echo "This is not the command you are looking for."; false'
 alias ls='ls -G'
 alias c='cd ~/code'
 alias d="cd ~/.dotfiles"
@@ -123,6 +120,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias tmuxinit="TERM=screen-256color-bce tmuxp load `ls ~/.tmuxp | sed 's/.yaml//'`"
 alias vim='nvim'
 alias vimdiff='nvim -d'
+alias tp="trash-put"
+alias tl="trash-list"
 
 #pretty json
 alias json="python -mjson.tool"
