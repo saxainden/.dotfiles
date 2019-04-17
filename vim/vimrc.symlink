@@ -212,6 +212,7 @@ map <c-i> :GoImports<CR>
 map <Leader>gi :GoImpl<CR>
 map <Leader>i :GoInfo<CR>
 map <Leader>r :GoRename<CR>
+map <Leader>e :GoIfErr<CR>
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
