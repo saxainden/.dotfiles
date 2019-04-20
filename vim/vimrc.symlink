@@ -31,6 +31,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 call plug#end()
 
+set shellcmdflag=-ic " make !command interactive, allowing for aliases to be loaded
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 set re=1 "use old regex engine for syntax highlighing. new one is slow
@@ -128,7 +129,7 @@ function! RenameFile()
     let new_name = input('New file name: ', expand('%'), 'file')
     if new_name != '' && new_name != old_name
         exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
+        exec ':silent !tp ' . old_name
         redraw!
     endif
 endfunction
@@ -188,6 +189,8 @@ let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
+let g:ale_go_bingo_executable = 'gopls'
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terraform
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
