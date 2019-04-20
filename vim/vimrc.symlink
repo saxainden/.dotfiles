@@ -16,7 +16,6 @@ Plug 'Raimondi/delimitMate' " auto complete parens, quotes, etc.
 Plug 'hallison/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'bling/vim-airline'
-Plug 'w0rp/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'hashivim/vim-terraform'
@@ -174,24 +173,6 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 map <c-p> :FZF<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ale linter
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F7> :ALEToggle<CR>
-nmap <F8> <Plug>(ale_fix)
-let g:ale_fixers = {
-      \   'ruby': ['rubocop'],
-      \   'go': ['gofmt'],
-      \   'python': ['yapf'],
-      \}
-" Error and warning signs.
-let g:ale_sign_error = '⤫'
-let g:ale_sign_warning = '⚠'
-" Enable integration with airline.
-let g:airline#extensions#ale#enabled = 1
-let g:ale_go_bingo_executable = 'gopls'
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terraform
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:terraform_align=1  "override indentation for tf files
@@ -217,17 +198,17 @@ map <Leader>r :GoRename<CR>
 map <Leader>e :GoIfErr<CR>
 
 " Required for operations modifying multiple buffers like rename.
-" set hidden
+set hidden
 
-" let g:LanguageClient_serverCommands = {
-"     \ 'go': ['$GOPATH/bin/gopls'],
-"     \ }
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['gopls'],
+    \ }
 
-" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" " Or map each action separately
-" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " deoplete
