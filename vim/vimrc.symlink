@@ -23,11 +23,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 call plug#end()
 
 set shellcmdflag=-ic " make !command interactive, allowing for aliases to be loaded
@@ -173,6 +170,32 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 map <c-p> :FZF<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ale linter
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F7> :ALEToggle<CR>
+nmap <F8> <Plug>(ale_fix)
+let g:ale_fixers = {
+      \   'ruby': ['rubocop'],
+      \   'go': ['gofmt'],
+      \   'python': ['yapf'],
+      \}
+
+let g:ale_go_golint_executable = 'golint'
+let g:ale_go_golint_options = ''
+let g:ale_go_gopls_executable = 'gopls'
+let g:ale_go_gopls_options = '--mode stdio'
+let g:ale_linters = {
+      \'go': ['golint', 'gopls'],
+      \}
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
+let g:ale_go_bingo_executable = 'gopls'
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terraform
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:terraform_align=1  "override indentation for tf files
@@ -199,16 +222,6 @@ map <Leader>e :GoIfErr<CR>
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
-
-let g:LanguageClient_serverCommands = {
-    \ 'go': ['gopls'],
-    \ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " deoplete
